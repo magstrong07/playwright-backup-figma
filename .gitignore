@@ -9,3 +9,6 @@ filesUrl.json
 fail_download.txt
 tests/auth.setup.ts
 package-lock.json
+backups
+data
+projectsData/ids.ts
