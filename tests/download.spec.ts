@@ -8,12 +8,12 @@ test.describe("download", async () => {
     for (const index in links) {
       const url = links[index].key;
       test(links[index].key, async ({ page }) => {
-        test.setTimeout(20 * 60 * 1000);
+        test.setTimeout(30 * 60 * 1000);
 
         await page.goto(`https://www.figma.com/file/${url}`);
 
-        await page.locator("id=toggle-menu-button").click();
-        await page.getByTestId("dropdown-option-File").click();
+        await page.locator("id=toggle-menu-button").click({timeout: 1 * 60 * 1000});
+        await page.getByTestId("dropdown-option-File").click({timeout: 1 * 60 * 1000});
 
         try {
           const downloadPromise = page.waitForEvent("download");
